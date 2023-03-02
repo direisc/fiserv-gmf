@@ -1,8 +1,0 @@
-
-> fiserv-gmf@1.0.0 build /Users/diegocarvalho/WORK/check21/fiserv-gmf
-> pnpm build:utils && tsx scripts/build.ts
-
-
-> fiserv-gmf@1.0.0 build:utils /Users/diegocarvalho/WORK/check21/fiserv-gmf
-> npx tsc src/utils.ts --declaration --outDir dist
-

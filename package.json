@@ -15,8 +15,8 @@
   "license": "MIT",
   "scripts": {
     "schema": "http-server ./schema -p 8080",
-    "cxsd": "cxsd",
-    "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd -t src/xmlns -j src/xmlns",
+    "cxsd": "cxsd -t src/xmlns -j src/xmlns",
+    "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd",
     "dev": "ts-node ./test/index.ts",
 
     "build": "tsx scripts/build.ts",

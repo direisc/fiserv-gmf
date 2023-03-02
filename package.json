@@ -19,7 +19,8 @@
     "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd",
     "dev": "ts-node ./test/index.ts",
 
-    "build": "tsx scripts/build.ts",
+    "build:utils": "npx tsc src/utils.ts --declaration --outDir dist",
+    "build": "pnpm build:utils && tsx scripts/build.ts",
     "ci": "turbo build check-exports lint lint-pkg-json",
     "check-exports": "check-export-map",
     "lint": "tsc",
@@ -41,6 +42,11 @@
       "types": "./dist/recommended.d.ts",
       "import": "./dist/recommended.mjs",
       "default": "./dist/recommended.js"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.ts",
+      "import": "./dist/utils.mjs",
+      "default": "./dist/utils.js"
     },
     "./gmfV12.04": {
       "types": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.d.ts",

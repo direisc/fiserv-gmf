@@ -59,6 +59,17 @@ const run = async () => {
       copyFolderRecursiveSync(path.join(entrypointDir, entrypoint), distDir);
       continue;
     }
+
+    if (entrypoint === "utils.ts") {
+      const entrypointBase = entrypoint.replace(".ts", "");
+      console.log(path.join(distDir, `${entrypointBase}.js`))
+      await fsPromises.copyFile(
+        path.join(distDir, `${entrypointBase}.js`),
+        path.join(distDir, `${entrypointBase}.mjs`),
+      );
+      continue;
+    }
+
     const entrypointBase = entrypoint.replace(".d.ts", "");
 
     await fsPromises.writeFile(path.join(distDir, `${entrypointBase}.js`), "");

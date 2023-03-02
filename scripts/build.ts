@@ -50,7 +50,6 @@ const run = async () => {
 
   const entrypoints = await fsPromises.readdir(entrypointDir);
 
-  console.log(entrypoints);
   for await (const entrypoint of entrypoints) {
     if(entrypoint === "test") {
       continue
@@ -62,7 +61,6 @@ const run = async () => {
 
     if (entrypoint === "utils.ts") {
       const entrypointBase = entrypoint.replace(".ts", "");
-      console.log(path.join(distDir, `${entrypointBase}.js`))
       await fsPromises.copyFile(
         path.join(distDir, `${entrypointBase}.js`),
         path.join(distDir, `${entrypointBase}.mjs`),

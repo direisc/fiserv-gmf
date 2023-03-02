@@ -9,3 +9,5 @@ tsconfig.json
 .turbo
 
 test
+schema
+cache

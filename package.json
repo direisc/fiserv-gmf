@@ -1,0 +1,79 @@
+{
+  "name": "fiserv-gmf",
+  "version": "1.0.0",
+  "description": "fiserv merchant gmfV12.04.xsd parsed with cxsd to typescript classes",
+  "private": false,
+  "repository": "https://github.com/direisc/fiserv-gmf",
+  "keywords": [
+    "fiserv",
+    "gmfV12.04",
+    "xsd",
+    "ts",
+    "cxsd"
+  ],
+  "author": "Diego Reis Carvalho",
+  "license": "MIT",
+  "scripts": {
+    "schema": "http-server ./schema -p 8080",
+    "cxsd": "cxsd",
+    "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd -t src/cxsd -j src/cxsd",
+    "dev": "ts-node ./test/index.ts",
+
+    "build": "tsx scripts/build.ts",
+    "ci": "turbo build check-exports lint lint-pkg-json",
+    "check-exports": "check-export-map",
+    "lint": "tsc",
+    "lint-pkg-json": "tsx scripts/lint.ts",
+    "release": "turbo run publish",
+    "publish": "changeset publish"
+  },
+  "main": "./dist/recommended.js",
+  "module": "./dist/recommended.mjs",
+  "types": "./dist/recommended.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/recommended.d.ts",
+      "import": "./dist/recommended.mjs",
+      "default": "./dist/recommended.js"
+    },
+    "./recommended": {
+      "types": "./dist/recommended.d.ts",
+      "import": "./dist/recommended.mjs",
+      "default": "./dist/recommended.js"
+    },
+    "./gmfV12.04": {
+      "types": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.d.ts",
+      "import": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.mjs",
+      "default": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.js"
+    },
+    "./xml-primitives": {
+      "types": "./dist/cxsd/xml-primitives.d.ts",
+      "import": "./dist/cxsd/xml-primitives.mjs",
+      "default": "./dist/cxsd/xml-primitives.js"
+    }
+  },
+  "dependencies": {
+    "cxsd": "^0.1.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "@types/node": "^18.14.4",
+    "check-export-map": "^1.3.0",
+    "fast-xml-parser": "^4.1.3",
+    "http-server": "^14.1.1",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.3",
+    "turbo": "^1.8.1",
+    "typescript": "^4.9.5"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "semi": true,
+    "printWidth": 80,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false
+  }
+}

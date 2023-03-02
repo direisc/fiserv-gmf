@@ -16,7 +16,7 @@
   "scripts": {
     "schema": "http-server ./schema -p 8080",
     "cxsd": "cxsd",
-    "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd -t src/cxsd -j src/cxsd",
+    "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd -t src/xmlns -j src/xmlns",
     "dev": "ts-node ./test/index.ts",
 
     "build": "tsx scripts/build.ts",
@@ -43,14 +43,14 @@
       "default": "./dist/recommended.js"
     },
     "./gmfV12.04": {
-      "types": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.d.ts",
-      "import": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.mjs",
-      "default": "./dist/cxsd/com/fiserv/Merchant/gmfV12.04.js"
+      "types": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.d.ts",
+      "import": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.mjs",
+      "default": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.js"
     },
     "./xml-primitives": {
-      "types": "./dist/cxsd/xml-primitives.d.ts",
-      "import": "./dist/cxsd/xml-primitives.mjs",
-      "default": "./dist/cxsd/xml-primitives.js"
+      "types": "./dist/xmlns/xml-primitives.d.ts",
+      "import": "./dist/xmlns/xml-primitives.mjs",
+      "default": "./dist/xmlns/xml-primitives.js"
     }
   },
   "dependencies": {

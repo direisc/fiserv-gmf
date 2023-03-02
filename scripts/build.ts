@@ -52,8 +52,10 @@ const run = async () => {
 
   console.log(entrypoints);
   for await (const entrypoint of entrypoints) {
-    // copy cxsd generated
-    if (entrypoint === "cxsd") {
+    if(entrypoint === "test") {
+      continue
+    }
+    if (entrypoint === "xmlns") {
       copyFolderRecursiveSync(path.join(entrypointDir, entrypoint), distDir);
       continue;
     }

@@ -2,13 +2,11 @@ import { XMLBuilder } from 'fast-xml-parser'
 
 import { debitRequest } from './DebitRequest'
 import { creditRequest } from './CreditRequest'
-import { mountResponse } from './Constants'
+import { cleanUpInterface, mountResponse } from '../utils'
 
 const builder = new XMLBuilder({
   format: true,
 })
-
-const cleanUpInterface = (obj: any) => JSON.parse(JSON.stringify(obj))
 
 const debitRequestXML = builder.build(cleanUpInterface(debitRequest))
 const creditRequestXML = builder.build(cleanUpInterface(creditRequest))

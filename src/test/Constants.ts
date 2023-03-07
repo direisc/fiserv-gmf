@@ -13,8 +13,3 @@ export const TCP_PORT = 1234;
 // Parameters for HTTP protocol
 export const HTTP_AUTHID = "XXXXX0000000000|00000000";
 export const HTTP_DID = "00000000000000000000";
-
-export const mountResponse = (BODY_MESSAGE: string) =>
-  `<?xml version="1.0" encoding="UTF-8"?>
-<GMF xmlns="com/fiserv/Merchant/gmfV12.04">
-${BODY_MESSAGE}</GMF>`

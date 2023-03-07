@@ -1,6 +1,6 @@
 {
   "name": "fiserv-gmf",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "fiserv merchant gmfV12.04.xsd parsed with cxsd to typescript classes",
   "private": false,
   "repository": "https://github.com/direisc/fiserv-gmf",

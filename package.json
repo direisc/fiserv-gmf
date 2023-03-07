@@ -15,7 +15,8 @@
   "license": "MIT",
   "scripts": {
     "schema": "http-server ./schema -p 8080",
-    "cxsd": "cxsd -t src/xmlns -j src/xmlns",
+    "cxsd:old": "cxsd -t src/xmlns -j src/xmlns",
+    "cxsd": "cxsd",
     "cxsd:build": "cxsd http://127.0.0.1:8080/gmfV12.04.xsd",
     "dev": "ts-node ./test/index.ts",
 
@@ -49,14 +50,9 @@
       "default": "./dist/utils.js"
     },
     "./gmfV12.04": {
-      "types": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.d.ts",
-      "import": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.mjs",
-      "default": "./dist/xmlns/com/fiserv/Merchant/gmfV12.04.js"
-    },
-    "./xml-primitives": {
-      "types": "./dist/xmlns/xml-primitives.d.ts",
-      "import": "./dist/xmlns/xml-primitives.mjs",
-      "default": "./dist/xmlns/xml-primitives.js"
+      "types": "./dist/gmfV12.04.d.ts",
+      "import": "./dist/gmfV12.04.mjs",
+      "default": "./dist/gmfV12.04.js"
     }
   },
   "dependencies": {
